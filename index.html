@@ -73,6 +73,57 @@
     </div>
   </section>
 
+  <!-- ===================== EXPERIENCE ===================== -->
+<section id="experience" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-6">
+  <h2 class="text-2xl font-bold">Experience</h2>
+  <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- PO @ Henry Schein -->
+    <article class="card p-6">
+      <div class="text-2xl">🧭</div>
+      <h3 class="mt-2 text-lg font-semibold">Product Owner — Henry Schein</h3>
+      <p class="text-xs text-neutral-400">Global E-commerce Platform (GEP)</p>
+      <ul class="mt-3 space-y-1 text-sm text-neutral-300">
+        <li class="bullet">Owned roadmap for compliance-heavy modules (Licensing, Payments, Approvals, Reconciliations).</li>
+        <li class="bullet">Shaped requirements into shippable stories; drove cross-market launches (US/CA/UK/EU).</li>
+        <li class="bullet">Raised signal in UX via clear error states, policy toggles, and audit-ready events.</li>
+        <li class="bullet">Partnered with Deloitte/TCS; unblocked delivery with data-driven prioritization.</li>
+      </ul>
+      <button data-exp="HS_PO" class="mt-4 rounded-xl border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-900/60 exp-filter">Show related modules</button>
+    </article>
+
+    <!-- BA @ Henry Schein -->
+    <article class="card p-6">
+      <div class="text-2xl">🧩</div>
+      <h3 class="mt-2 text-lg font-semibold">Business Analyst — Henry Schein</h3>
+      <p class="text-xs text-neutral-400">GEP migration (GenX → GenY)</p>
+      <ul class="mt-3 space-y-1 text-sm text-neutral-300">
+        <li class="bullet">Ran SME clinics; turned legacy asks into testable ACs and UI/flow specs.</li>
+        <li class="bullet">Mapped integrations (CDC, CCv2, MuleSoft) with Pattern-1 orchestration & retries.</li>
+        <li class="bullet">Drove catalog/checkout edge cases (budget, licenses, matrix ordering).</li>
+        <li class="bullet">Authored change logs; coordinated QA traces and release notes.</li>
+      </ul>
+      <button data-exp="HS_BA" class="mt-4 rounded-xl border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-900/60 exp-filter">Show related modules</button>
+    </article>
+
+    <!-- Technical BA @ AXA XL -->
+    <article class="card p-6">
+      <div class="text-2xl">⚙️</div>
+      <h3 class="mt-2 text-lg font-semibold">Technical BA — AXA XL Insurance</h3>
+      <p class="text-xs text-neutral-400">Automation & RPA</p>
+      <ul class="mt-3 space-y-1 text-sm text-neutral-300">
+        <li class="bullet">Captured system workflows; defined happy/exception paths for bots.</li>
+        <li class="bullet">Instrumented logs & handoff rules for resilient human-in-the-loop steps.</li>
+        <li class="bullet">Wrote data contracts; validated API payloads & PII masking rules.</li>
+        <li class="bullet">Optimized queue SLAs with measurable error-rate reductions.</li>
+      </ul>
+      <button data-exp="AXA_TBA" class="mt-4 rounded-xl border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-900/60 exp-filter">Show related modules</button>
+    </article>
+
+  </div>
+</section>
+
+
   <!-- CATALOG (Modules presented like products) -->
 <!-- ===================== MODULES (CATALOG) v2 ===================== -->
 <section id="catalog" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
@@ -121,10 +172,12 @@
 
 <script>
   // ===== Data-driven modules =====
+ <script>
   const MODULES = [
     {
       icon:"🦷", title:"Teeth Ordering (Gen Y – Phase 2)",
       tags:["commerce","compliance"],
+      experiences:["HS_PO","HS_BA"],
       bullets:[
         "Matrix ordering for Shade × Mold × Upper/Lower; parent/child cart lines.",
         "Catalog-gated access; market toggle; no guest visibility.",
@@ -135,6 +188,7 @@
     {
       icon:"🛒", title:"Shopping Lists & Favorites",
       tags:["commerce","platform"],
+      experiences:["HS_BA"],
       bullets:[
         "Tabbed Lists & Favorites with search, filters, and pagination.",
         "Granular sharing (users/locations/org) with view/edit controls.",
@@ -145,6 +199,7 @@
     {
       icon:"🔐", title:"Login & Access Control",
       tags:["platform","compliance"],
+      experiences:["HS_BA"],
       bullets:[
         "2FA (Email/SMS/Call), device trust (30 days), recovery flows.",
         "Edit credential gates, lockouts, inactivity timeouts with resume.",
@@ -155,6 +210,7 @@
     {
       icon:"🏷️", title:"Custom Partner Storefront",
       tags:["platform","commerce"],
+      experiences:["HS_PO"],
       bullets:[
         "Partner-branded pages via CMS (hero/nav/cards/forms/ad zones).",
         "GenX component reuse; FE/Sitecore-first; localized & responsive.",
@@ -165,6 +221,7 @@
     {
       icon:"🔁", title:"Order Management",
       tags:["commerce","platform"],
+      experiences:["HS_PO"],
       bullets:[
         "Future & Recurring Orders: create, modify, skip, ship-now, cancel-all.",
         "“Future & Recurring” tab with filters, search, and Excel export.",
@@ -175,6 +232,7 @@
     {
       icon:"📑", title:"Invoice Reconciliations (3-Way Match)",
       tags:["payments","compliance"],
+      experiences:["HS_PO"],
       bullets:[
         "Receiving → Invoice Verification → Export/Payment workflow.",
         "Role-gated dashboards, discrepancy handling, e-Receipts, audit trail.",
@@ -185,6 +243,7 @@
     {
       icon:"📊", title:"Account Dashboard",
       tags:["platform","commerce"],
+      experiences:["HS_BA"],
       bullets:[
         "Widget hub: Orders, Payments, Licensing, Recommendations, Support.",
         "Barcode-scanner CTA; quick reorder; role-aware visibility.",
@@ -195,6 +254,7 @@
     {
       icon:"👤", title:"Profile Management",
       tags:["platform","compliance"],
+      experiences:["HS_BA"],
       bullets:[
         "My Settings: Profile, Checkout, Preferences with 2FA/recovery.",
         "Edit gates + lockouts; audit timestamps; role/workflow visibility.",
@@ -205,6 +265,7 @@
     {
       icon:"💳", title:"Statements & Payments (AutoPay + Errors)",
       tags:["payments","platform"],
+      experiences:["HS_PO"],
       bullets:[
         "AutoPay enrollment; filter unenrolled accounts; saved method checks.",
         "30+ error codes normalized to user-friendly categories.",
@@ -215,6 +276,7 @@
     {
       icon:"🪪", title:"License Management (DEA / TDDD / E222)",
       tags:["compliance","commerce"],
+      experiences:["HS_PO","HS_BA"],
       bullets:[
         "Attestation prompts; expiry reminders; checkout gating.",
         "JDE-backed verification; manual overrides reflected in UX.",
@@ -225,6 +287,7 @@
     {
       icon:"💸", title:"Budget Controls & Approvals",
       tags:["payments","compliance"],
+      experiences:["HS_PO"],
       bullets:[
         "CC-only vs BOA behaviors; policy enable/disable with tooltips.",
         "Multi-tier thresholds, routing, and pending-order changes.",
@@ -235,6 +298,7 @@
     {
       icon:"📈", title:"Reporting (Create / Modify / Notify)",
       tags:["platform"],
+      experiences:["HS_PO"],
       bullets:[
         "Modify with pre-filled steps; partial edits allowed.",
         "Date-range only where applicable (eCatalog exception).",
@@ -243,6 +307,44 @@
       link:null
     }
   ];
+</script>
+
+  <script>
+  let selectedTag = "all";
+  let selectedExp = "all";
+
+  function renderModules(){
+    const grid = document.getElementById("modules-grid");
+    grid.innerHTML = "";
+    MODULES
+      .filter(m => selectedTag==="all" ? true : m.tags.includes(selectedTag))
+      .filter(m => selectedExp==="all" ? true : (m.experiences||[]).includes(selectedExp))
+      .forEach(m => {
+        // your existing card creation code already here
+      });
+  }
+
+  // Category filter buttons (Commerce / Payments / etc.)
+  document.querySelectorAll(".mod-filter").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      document.querySelectorAll(".mod-filter").forEach(b=>b.classList.remove("bg-neutral-900/60"));
+      btn.classList.add("bg-neutral-900/60");
+      selectedTag = btn.dataset.filter;
+      renderModules();
+    });
+  });
+
+  // Experience buttons (PO / BA)
+  document.querySelectorAll(".exp-filter").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      selectedExp = btn.dataset.exp;
+      document.getElementById("modules-grid")?.scrollIntoView({behavior:"smooth"});
+      renderModules();
+    });
+  });
+
+  renderModules(); // run once at page load
+</script>
 
   function tagToLabel(t){ return ({
     commerce:"Commerce", payments:"Payments", compliance:"Compliance", platform:"Platform"
