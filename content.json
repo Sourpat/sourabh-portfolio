@@ -1,0 +1,83 @@
+{
+  "name": "Sourabh Patil",
+  "title": "Product Owner / Business Analyst",
+  "tagline": "Building compliant, scalable e‑commerce and payments products for global markets",
+  "location": "Jersey City, NJ",
+  "email": "sourpat27@gmail.com",
+  "phone": "(401) 688‑2891",
+  "linkedin": "https://www.linkedin.com/in/sourabh-patil-87582719a/",
+  "h1b_note": "Open to Product Owner / Business Analyst roles (H‑1B transfer)",
+  "quick_facts": [
+    "Global E‑commerce Platform (GEP) – US/CA/UK/EU",
+    "Partners: Deloitte (US/CA/EU), TCS (UK/IE)",
+    "Domains: Licensing (DEA/TDDD/E222), Payments/Autopay, Budget, MTA Approvals, Reporting",
+    "Tooling: Jira, Confluence, SQL/PL‑SQL, Power BI, Azure"
+  ],
+  "achievements": [
+    "Standardized 30+ payment error codes into clear, customer‑friendly categories for Statements & Payments.",
+    "Drove license workflows (DEA / TDDD / E222) with JDE‑backed verification and auditability.",
+    "Reusable designs for budget restrictions, multi‑tier approvals, and license attestation prompts across locales.",
+    "Aligned analytics semantics between backend models and Power BI reports to ensure metric parity."
+  ],
+  "experience": [
+    {
+      "role": "Product Owner",
+      "company": "Henry Schein",
+      "dates": "Jul 2024 – Present • Remote (US)",
+      "summary": "Owned end‑to‑end delivery across License Management, Budget Management, Statements & Payments, Shopping Cart, Reporting, and Approvals in GEP.",
+      "bullets": [
+        "Drove backlog, authored stories & ACs, ran grooming/sprint planning; partnered with Deloitte (US/CA/EU) & TCS (UK/IE).",
+        "Codified market‑specific compliance logic (DEA, TDDD, E222); ensured JDE integration and audit traceability.",
+        "Standardized error taxonomy for 30+ payment failures to improve UX, observability, and support efficiency.",
+        "Validated UX for AutoPay enrollment, budget restrictions, and license attestation prompts."
+      ]
+    },
+    {
+      "role": "Business Analyst",
+      "company": "Henry Schein",
+      "dates": "Apr 2022 – Jul 2024 • Remote (US)",
+      "summary": "First point of contact for offshore dev teams. Authored BRDs/FRDs, diagrams, and managed UAT/SIT cycles across modules.",
+      "bullets": [
+        "Built PL/SQL checks for migrated licensing/ordering datasets; partnered with QA for data integrity.",
+        "Aligned analytics KPIs with Power BI semantics; ensured front‑end reports matched backend models.",
+        "Resolved production issues in OneWeb; translated legacy behaviors to GEP without regressions."
+      ]
+    },
+    {
+      "role": "Senior Technical Analyst",
+      "company": "AXA XL Insurance",
+      "dates": "Oct 2021 – Apr 2022",
+      "summary": "RPA/automation‑oriented BA: process discovery, feasibility, and solution validation across data pipelines.",
+      "bullets": [
+        "Wrote SQL/PL‑SQL to standardize disparate datasets; supported migrations & integrity checks.",
+        "Partnered with Change Delivery to ensure automations fit end‑to‑end process flows."
+      ]
+    }
+  ],
+  "case_studies": [
+    {
+      "title": "License Management – Unified Attestation & Verification",
+      "summary": "Designed end‑to‑end journeys (add, validate, verify) with inline error states; ensured manual JDE overrides are reflected in prompts and checkout gating."
+    },
+    {
+      "title": "Statements & Payments – AutoPay + Failure Taxonomy",
+      "summary": "Shaped AutoPay enrollment UX and consolidated 30+ error codes into a human‑readable taxonomy to reduce confusion and support time."
+    },
+    {
+      "title": "Budget Controls & Multi‑Tier Approvals",
+      "summary": "Clarified BOA vs Credit‑Card only behaviors; defined thresholds, routing, and pending‑order change handling."
+    },
+    {
+      "title": "Modify Reports – Pre‑filled Flows",
+      "summary": "Enabled partial edits with pre‑filled steps; restricted date‑range where not applicable (eCatalogs)."
+    }
+  ],
+  "skills": {
+    "Product & Delivery": "Jira, Confluence, Agile/Scrum/SAFe, Backlog, Grooming, Sprint Planning, UAT/SIT",
+    "Data & Reporting": "SQL/PL‑SQL, Power BI, Tableau, Excel (Pivots/Macros), Azure (Data Lake/ADF)",
+    "Domains": "Regulatory Commerce, Payments, Budget Controls, Approvals, Reporting",
+    "Tech & Testing": "Postman/Swagger, API testing, TestRail, Diagrams (Use‑Case/Sequence/Activity)",
+    "Collaboration": "Deloitte & TCS partner management, SME pre‑alignment, design reviews",
+    "Certifications": "IBM GenAI for Product Owners; CSPO (in progress)"
+  }
+}
