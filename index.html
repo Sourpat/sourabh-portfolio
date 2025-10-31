@@ -343,57 +343,78 @@
     });
   });
 
-  renderModules(); // run once at page load
-</script>
+<!-- MODULES RENDER SCRIPT (place this just before </body>) -->
+<script>
+  // State
+  let selectedTag = "all";
+  let selectedExp = "all";
 
-  function tagToLabel(t){ return ({
-    commerce:"Commerce", payments:"Payments", compliance:"Compliance", platform:"Platform"
-  })[t] || t; }
+  // Helpers
+  function tagToLabel(t){
+    return ({ commerce:"Commerce", payments:"Payments", compliance:"Compliance", platform:"Platform" })[t] || t;
+  }
 
-  function renderModules(filter="all"){
+  // Render
+  function renderModules(){
     const grid = document.getElementById("modules-grid");
+    if(!grid || !window.MODULES && !window.MODULES?.length) return;
+
+    // Use global MODULES defined earlier in your page
+    const data = window.MODULES || [];
+
     grid.innerHTML = "";
-    MODULES
-      .filter(m => filter==="all" ? true : m.tags.includes(filter))
+    data
+      .filter(m => selectedTag==="all" ? true : (m.tags||[]).includes(selectedTag))
+      .filter(m => selectedExp==="all" ? true : (m.experiences||[]).includes(selectedExp))
       .forEach(m => {
         const card = document.createElement("article");
         card.className = "card p-6 hover:border-neutral-600";
         card.innerHTML = `
           <div class="flex items-start justify-between gap-3">
-            <div class="text-2xl">${m.icon}</div>
+            <div class="text-2xl">${m.icon || "📦"}</div>
             <div class="flex items-center gap-2">
-              ${m.tags.map(t=>`<span class="tag">${tagToLabel(t)}</span>`).join("")}
+              ${(m.tags||[]).map(t=>`<span class="tag">${tagToLabel(t)}</span>`).join("")}
             </div>
           </div>
           <h3 class="mt-3 text-lg font-semibold text-white">${m.title}</h3>
           <ul class="mt-3 space-y-1 text-sm text-neutral-300">
-            ${m.bullets.map(b=>`<li class="bullet">${b}</li>`).join("")}
+            ${(m.bullets||[]).map(b=>`<li class="bullet">${b}</li>`).join("")}
           </ul>
           <div class="mt-4 flex items-center gap-3">
             ${m.link ? `<a href="${m.link}" class="rounded-xl border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-900/60">View case</a>` : ""}
             <button class="toggle-more rounded-xl border border-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-900/60">Key outcomes</button>
           </div>
           <div class="reveal mt-3 text-xs text-neutral-400 leading-relaxed">
-            <p><strong>Outcomes recruiters care about:</strong> reduced support tickets via clearer errors, faster approvals with policy routing, higher reorder conversions via lists/favorites, and cleaner compliance with audit-ready flows.</p>
+            <p><strong>Recruiter takeaways:</strong> reusable patterns, clearer error states, and audit-ready flows.</p>
           </div>
         `;
-        const btn = card.querySelector(".toggle-more");
         const rev = card.querySelector(".reveal");
-        btn?.addEventListener("click",()=>rev.classList.toggle("open"));
+        card.querySelector(".toggle-more")?.addEventListener("click", ()=>rev.classList.toggle("open"));
         grid.appendChild(card);
       });
   }
 
-  // filter buttons
+  // Bind filters (category pills)
   document.querySelectorAll(".mod-filter").forEach(btn=>{
-    btn.addEventListener("click", ()=> {
+    btn.addEventListener("click", ()=>{
       document.querySelectorAll(".mod-filter").forEach(b=>b.classList.remove("bg-neutral-900/60"));
       btn.classList.add("bg-neutral-900/60");
-      renderModules(btn.dataset.filter);
+      selectedTag = btn.dataset.filter || "all";
+      renderModules();
     });
   });
 
-  renderModules(); // initial
+  // Bind experience buttons (PO / BA)
+  document.querySelectorAll(".exp-filter").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      selectedExp = btn.dataset.exp || "all";     // HS_PO or HS_BA
+      document.getElementById("modules-grid")?.scrollIntoView({behavior:"smooth", block:"start"});
+      renderModules();
+    });
+  });
+
+  // First paint
+  renderModules();
 </script>
 
   
