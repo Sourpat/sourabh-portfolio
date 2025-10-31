@@ -170,7 +170,6 @@
   .reveal.open { display:block; }
 </style>
 
-<script>
   // ===== Data-driven modules =====
  <script>
   window.MODULES = [
@@ -308,40 +307,6 @@
     }
   ];
 </script>
-
-  <script>
-  let selectedTag = "all";
-  let selectedExp = "all";
-
-  function renderModules(){
-    const grid = document.getElementById("modules-grid");
-    grid.innerHTML = "";
-    MODULES
-      .filter(m => selectedTag==="all" ? true : m.tags.includes(selectedTag))
-      .filter(m => selectedExp==="all" ? true : (m.experiences||[]).includes(selectedExp))
-      .forEach(m => {
-        // your existing card creation code already here
-      });
-  }
-
-  // Category filter buttons (Commerce / Payments / etc.)
-  document.querySelectorAll(".mod-filter").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      document.querySelectorAll(".mod-filter").forEach(b=>b.classList.remove("bg-neutral-900/60"));
-      btn.classList.add("bg-neutral-900/60");
-      selectedTag = btn.dataset.filter;
-      renderModules();
-    });
-  });
-
-  // Experience buttons (PO / BA)
-  document.querySelectorAll(".exp-filter").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      selectedExp = btn.dataset.exp;
-      document.getElementById("modules-grid")?.scrollIntoView({behavior:"smooth"});
-      renderModules();
-    });
-  });
 
 <!-- MODULES RENDER SCRIPT (place this just before </body>) -->
 <script>
