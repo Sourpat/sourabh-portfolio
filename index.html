@@ -125,7 +125,7 @@
         <a class="mt-4 inline-block text-xs rounded-xl border border-neutral-700 px-3 py-1.5 hover:bg-neutral-900/60" href="#releases">View case</a>
       </article>
 
-      <!-- Teeth Ordering (Gen Y – Phase 2) -->
+      <!-- Teeth Ordering -->
 <article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
   <h3 class="font-semibold">Teeth Ordering (Gen Y – Phase 2)</h3>
   <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
@@ -161,6 +161,92 @@
     </div>
   </section>
 
+  <!-- Shopping Lists & Favorites -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Shopping Lists & Favorites</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li>Unified “My Lists & Favorites” with tabbed UX, breadcrumbs, search, filters, and pagination.</li>
+    <li>Granular sharing: private, location-based, or org-wide; view vs edit rights; bulk apply by location/org.</li>
+    <li>Detail page controls: rename list, set sharing, delete/hide, quick add by item code, upload/download Excel.</li>
+    <li>Favorites tab: searchable, filterable product listing with Add to Cart & Remove actions.</li>
+  </ul>
+  <!-- Keeping to overview level: no case-study link yet -->
+</article>
+
+  <!-- Login & Access Control -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Login & Access Control</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li><span class="font-medium">2FA everywhere:</span> Email / SMS / Call with device trust (30-day remember), edit-gates, and unsaved-changes warnings.</li>
+    <li><span class="font-medium">Recovery & legacy flows:</span> Forgot Username (unique vs shared email + recovery email), Reset Password with/without 2FA, legacy security-Q migration.</li>
+    <li><span class="font-medium">Lockouts & timeouts:</span> Progressive errors, 3-try lock with friendly remediation, 120-min inactivity auto-logout with pre-warning & resume.</li>
+    <li><span class="font-medium">Location & site routing:</span> Last-session/first-assigned location defaults, inactive-location handling, division/site uniqueness & redirects.</li>
+    <li><span class="font-medium">Roles & admin guardrails:</span> Edit-eligibility flags, tooltip denials, TSM SSO via ADFS (no 2FA), admin/TSM profile updates within territory.</li>
+    <li><span class="font-medium">Resilience:</span> Graceful-degradation for login/CDP downtime; generic, CMS-managed messages; no error-stacking.</li>
+  </ul>
+  <!-- Overview-only: no deep-link yet -->
+</article>
+
+  <!-- Custom Partner Storefront -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Custom Partner Storefront</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li>Partner-branded storefront pages with CMS-authored components (hero, nav, content blocks).</li>
+    <li>Global enablement (US/CA/UK/IE) with responsive breakpoints and localized labels.</li>
+    <li>FE/Sitecore-first delivery; reuse GenX components, validate in Gen-Y (no CCv2/Mule changes for core pages).</li>
+    <li>In-page sticky nav, gated forms (Marketo/HubSpot), ad zones, and rebuy mini cards with pricing on login.</li>
+  </ul>
+  <!-- Overview-only: no deep link yet -->
+</article>
+
+  <!-- Order Management -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Order Management</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li>End-to-end recurring & future order workflow — create, modify, delete, skip, ship now, and reschedule deliveries.</li>
+    <li>“Future & Recurring” tab in My Orders with advanced filters, sorting, date-range search, and Excel export.</li>
+    <li>Modify recurring orders directly from PDP or Cart; supports early processing, skipping next, or cancel-all actions.</li>
+    <li>Automated notifications 3 days before processing; highlights cart issues, approvals, and logic failures.</li>
+    <li>MuleSoft-led API orchestration with CCv2; synchronous integration, correlation IDs, retries, JSON payload logging.</li>
+  </ul>
+</article>
+
+  <!-- Invoice Reconciliations -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Invoice Reconciliations (3-Way Match)</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li>3-step reconciliation flow: Receiving → Invoice Verification → Export/Payment.</li>
+    <li>Access-right–driven dashboards with audit trail, policy acceptance, and e-Receipt generation.</li>
+    <li>Smart discrepancy handling, email alerts, and auto-save workflows with One-Click Verify.</li>
+    <li>Custom CSV export builder with templates, scheduling, and email delivery.</li>
+    <li>Integrated with Online Payments, BI, and Returns for end-to-end financial traceability.</li>
+  </ul>
+</article>
+
+  <!-- Account Dashboard -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Account Dashboard</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li>Single entry hub consolidating Order Summaries, Licenses, Payments, Support, and Recommendations.</li>
+    <li>Smart insights: “Recommendations based on order history,” saved search shortcuts, and quick-reorder tiles.</li>
+    <li>Integrated barcode-scanner CTA with device compatibility and plug-and-play setup across locales.</li>
+    <li>Dynamic widgets with role-based visibility (TSM vs Buyer) and market-specific content delivery.</li>
+    <li>Bottom ribbon shortcuts for Account Support, Invoices, and key e-commerce actions.</li>
+  </ul>
+</article>
+
+  <!-- Profile Management -->
+<article class="rounded-2xl border border-neutral-800 p-6 bg-neutral-950/50">
+  <h3 class="font-semibold">Profile Management</h3>
+  <ul class="mt-3 list-disc pl-5 text-sm text-neutral-300 space-y-1">
+    <li>Global “My Settings & Preferences” suite covering Profile, Checkout, and Communication tabs.</li>
+    <li>2FA setup, recovery email, and security Q&A flows using CDC APIs with 70%+ test coverage.</li>
+    <li>Smart lockout logic—3 failed attempts trigger credential-edit lock for 10 mins (non-logout).</li>
+    <li>Profile image management, role visibility, and workflow rights with audit timestamps.</li>
+    <li>Express checkout, email preferences, and savings-display toggles, all API-driven and localized.</li>
+  </ul>
+</article>  
+  
   <!-- RELEASE NOTES (like a storefront changelog) -->
   <section id="releases" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
     <h2 class="text-2xl font-bold">Feature Releases & Outcomes</h2>
