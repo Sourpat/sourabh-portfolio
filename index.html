@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23111827%22/><text x=%2220%22 y=%2258%22 font-size=%2250%22 fill=%22%23D946EF%22>SP</text></svg>">
   <style> ::selection{background:rgba(217,70,239,.35);color:#0a0a0a} </style>
-
+  
   <!-- Structured data -->
   <script type="application/ld+json">
   {
@@ -170,141 +170,69 @@
   .reveal.open { display:block; }
 </style>
 
-  // ===== Data-driven modules =====
- <script>
+<!-- Data-driven modules -->
+<script>
   window.MODULES = [
-    {
-      icon:"🦷", title:"Teeth Ordering (Gen Y – Phase 2)",
-      tags:["commerce","compliance"],
-      experiences:["HS_PO","HS_BA"],
-      bullets:[
-        "Matrix ordering for Shade × Mold × Upper/Lower; parent/child cart lines.",
-        "Catalog-gated access; market toggle; no guest visibility.",
-        "Checkout preference for OOS handling (Substitute / Backorder / Cancel)."
-      ],
-      link:null
-    },
-    {
-      icon:"🛒", title:"Shopping Lists & Favorites",
-      tags:["commerce","platform"],
-      experiences:["HS_BA"],
-      bullets:[
-        "Tabbed Lists & Favorites with search, filters, and pagination.",
-        "Granular sharing (users/locations/org) with view/edit controls.",
-        "Excel upload/download; quick add by item code; actions respect rights."
-      ],
-      link:null
-    },
-    {
-      icon:"🔐", title:"Login & Access Control",
-      tags:["platform","compliance"],
-      experiences:["HS_BA"],
-      bullets:[
-        "2FA (Email/SMS/Call), device trust (30 days), recovery flows.",
-        "Edit credential gates, lockouts, inactivity timeouts with resume.",
-        "TSM SSO via ADFS; site/locale routing and resilient error UX."
-      ],
-      link:null
-    },
-    {
-      icon:"🏷️", title:"Custom Partner Storefront",
-      tags:["platform","commerce"],
-      experiences:["HS_PO"],
-      bullets:[
-        "Partner-branded pages via CMS (hero/nav/cards/forms/ad zones).",
-        "GenX component reuse; FE/Sitecore-first; localized & responsive.",
-        "Rebuy mini-cards (pricing on login) and sticky in-page nav."
-      ],
-      link:null
-    },
-    {
-      icon:"🔁", title:"Order Management",
-      tags:["commerce","platform"],
-      experiences:["HS_PO"],
-      bullets:[
-        "Future & Recurring Orders: create, modify, skip, ship-now, cancel-all.",
-        "“Future & Recurring” tab with filters, search, and Excel export.",
-        "MuleSoft-led APIs with retries, correlation IDs, and payload logging."
-      ],
-      link:null
-    },
-    {
-      icon:"📑", title:"Invoice Reconciliations (3-Way Match)",
-      tags:["payments","compliance"],
-      experiences:["HS_PO"],
-      bullets:[
-        "Receiving → Invoice Verification → Export/Payment workflow.",
-        "Role-gated dashboards, discrepancy handling, e-Receipts, audit trail.",
-        "CSV export profiles, scheduling, and email delivery."
-      ],
-      link:null
-    },
-    {
-      icon:"📊", title:"Account Dashboard",
-      tags:["platform","commerce"],
-      experiences:["HS_BA"],
-      bullets:[
-        "Widget hub: Orders, Payments, Licensing, Recommendations, Support.",
-        "Barcode-scanner CTA; quick reorder; role-aware visibility.",
-        "Lazy data loads; analytics hooks; bottom ribbon shortcuts."
-      ],
-      link:null
-    },
-    {
-      icon:"👤", title:"Profile Management",
-      tags:["platform","compliance"],
-      experiences:["HS_BA"],
-      bullets:[
-        "My Settings: Profile, Checkout, Preferences with 2FA/recovery.",
-        "Edit gates + lockouts; audit timestamps; role/workflow visibility.",
-        "Express checkout, comms preferences, and multi-market localization."
-      ],
-      link:null
-    },
-    {
-      icon:"💳", title:"Statements & Payments (AutoPay + Errors)",
-      tags:["payments","platform"],
-      experiences:["HS_PO"],
-      bullets:[
-        "AutoPay enrollment; filter unenrolled accounts; saved method checks.",
-        "30+ error codes normalized to user-friendly categories.",
-        "Make a Payment: full/partial, saved-method validation, clear failures."
-      ],
-      link:null
-    },
-    {
-      icon:"🪪", title:"License Management (DEA / TDDD / E222)",
-      tags:["compliance","commerce"],
-      experiences:["HS_PO","HS_BA"],
-      bullets:[
-        "Attestation prompts; expiry reminders; checkout gating.",
-        "JDE-backed verification; manual overrides reflected in UX.",
-        "Clear inline error states; auditability across locales."
-      ],
-      link:null
-    },
-    {
-      icon:"💸", title:"Budget Controls & Approvals",
-      tags:["payments","compliance"],
-      experiences:["HS_PO"],
-      bullets:[
-        "CC-only vs BOA behaviors; policy enable/disable with tooltips.",
-        "Multi-tier thresholds, routing, and pending-order changes.",
-        "Approval UX aligned with budget checks at the right step."
-      ],
-      link:null
-    },
-    {
-      icon:"📈", title:"Reporting (Create / Modify / Notify)",
-      tags:["platform"],
-      experiences:["HS_PO"],
-      bullets:[
-        "Modify with pre-filled steps; partial edits allowed.",
-        "Date-range only where applicable (eCatalog exception).",
-        "Plan to surface generation failures on web, not just email."
-      ],
-      link:null
-    }
+    { icon:"🦷", title:"Teeth Ordering (Gen Y – Phase 2)", tags:["commerce","compliance"], experiences:["HS_PO","HS_BA"], bullets:[
+      "Matrix ordering for Shade × Mold × Upper/Lower; parent/child cart lines.",
+      "Catalog-gated access; market toggle; no guest visibility.",
+      "Checkout preference for OOS handling (Substitute / Backorder / Cancel)."
+    ]},
+    { icon:"🛒", title:"Shopping Lists & Favorites", tags:["commerce","platform"], experiences:["HS_BA"], bullets:[
+      "Tabbed Lists & Favorites with search, filters, and pagination.",
+      "Granular sharing (users/locations/org) with view/edit controls.",
+      "Excel upload/download; quick add by item code; actions respect rights."
+    ]},
+    { icon:"🔐", title:"Login & Access Control", tags:["platform","compliance"], experiences:["HS_BA"], bullets:[
+      "2FA (Email/SMS/Call), device trust (30 days), recovery flows.",
+      "Edit credential gates, lockouts, inactivity timeouts with resume.",
+      "TSM SSO via ADFS; site/locale routing and resilient error UX."
+    ]},
+    { icon:"🏷️", title:"Custom Partner Storefront", tags:["platform","commerce"], experiences:["HS_PO"], bullets:[
+      "Partner-branded pages via CMS (hero/nav/cards/forms/ad zones).",
+      "GenX component reuse; FE/Sitecore-first; localized & responsive.",
+      "Rebuy mini-cards (pricing on login) and sticky in-page nav."
+    ]},
+    { icon:"🔁", title:"Order Management", tags:["commerce","platform"], experiences:["HS_PO"], bullets:[
+      "Future & Recurring: create, modify, skip, ship-now, cancel-all.",
+      "“Future & Recurring” tab; filters, search, Excel export.",
+      "MuleSoft-led APIs with retries, correlation IDs, payload logging."
+    ]},
+    { icon:"📑", title:"Invoice Reconciliations (3-Way Match)", tags:["payments","compliance"], experiences:["HS_PO"], bullets:[
+      "Receiving → Invoice Verification → Export/Payment workflow.",
+      "Role-gated dashboards, discrepancy handling, e-Receipts, audit trail.",
+      "CSV export profiles, scheduling, and email delivery."
+    ]},
+    { icon:"📊", title:"Account Dashboard", tags:["platform","commerce"], experiences:["HS_BA"], bullets:[
+      "Widget hub: Orders, Payments, Licensing, Recommendations, Support.",
+      "Barcode-scanner CTA; quick reorder; role-aware visibility.",
+      "Lazy data loads; analytics hooks; bottom ribbon shortcuts."
+    ]},
+    { icon:"👤", title:"Profile Management", tags:["platform","compliance"], experiences:["HS_BA"], bullets:[
+      "My Settings: Profile, Checkout, Preferences with 2FA/recovery.",
+      "Edit gates + lockouts; audit timestamps; role/workflow visibility.",
+      "Express checkout, comms preferences, multi-market localization."
+    ]},
+    { icon:"💳", title:"Statements & Payments (AutoPay + Errors)", tags:["payments","platform"], experiences:["HS_PO"], bullets:[
+      "AutoPay enrollment; filter unenrolled accounts; saved method checks.",
+      "30+ error codes normalized to user-friendly categories.",
+      "Make a Payment: full/partial; saved-method validation; clear failures."
+    ]},
+    { icon:"🪪", title:"License Management (DEA / TDDD / E222)", tags:["compliance","commerce"], experiences:["HS_PO","HS_BA"], bullets:[
+      "Attestation prompts; expiry reminders; checkout gating.",
+      "JDE-backed verification; manual overrides reflected in UX.",
+      "Clear inline error states; auditability across locales."
+    ]},
+    { icon:"💸", title:"Budget Controls & Approvals", tags:["payments","compliance"], experiences:["HS_PO"], bullets:[
+      "CC-only vs BOA behaviors; policy enable/disable with tooltips.",
+      "Multi-tier thresholds, routing, pending-order changes.",
+      "Approval UX aligned with budget checks at the right step."
+    ]},
+    { icon:"📈", title:"Reporting (Create / Modify / Notify)", tags:["platform"], experiences:["HS_PO"], bullets:[
+      "Modify with pre-filled steps; partial edits allowed.",
+      "Date-range only where applicable (eCatalog exception).",
+      "Plan to surface generation failures on web, not just email."
+    ]}
   ];
 </script>
 
@@ -500,7 +428,75 @@
   });
 </script>
 
-  
+  <!-- === MODULES RENDER SCRIPT (final working version) === -->
+<script>
+(function(){
+  // --- State ---
+  let selectedTag = "all";
+  let selectedExp = "all";
+
+  // --- Helper ---
+  const tagToLabel = t => ({
+    commerce:"Commerce",
+    payments:"Payments",
+    compliance:"Compliance",
+    platform:"Platform"
+  })[t] || t;
+
+  // --- Render logic ---
+  function renderModules(){
+    const grid = document.getElementById("modules-grid");
+    if(!grid) return;
+    const data = window.MODULES || [];
+    grid.innerHTML = "";
+
+    data
+      .filter(m => selectedTag==="all" ? true : (m.tags||[]).includes(selectedTag))
+      .filter(m => selectedExp==="all" ? true : (m.experiences||[]).includes(selectedExp))
+      .forEach(m=>{
+        const card = document.createElement("article");
+        card.className = "card p-6 hover:border-neutral-600";
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <div class="text-2xl">${m.icon||"📦"}</div>
+            <div class="flex items-center gap-2">
+              ${(m.tags||[]).map(t=>`<span class='tag'>${tagToLabel(t)}</span>`).join("")}
+            </div>
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-white">${m.title}</h3>
+          <ul class="mt-3 space-y-1 text-sm text-neutral-300">
+            ${(m.bullets||[]).map(b=>`<li class='bullet'>${b}</li>`).join("")}
+          </ul>
+        `;
+        grid.appendChild(card);
+      });
+  }
+
+  // --- Button wiring ---
+  document.querySelectorAll(".mod-filter").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll(".mod-filter").forEach(b=>b.classList.remove("bg-neutral-900/60"));
+      btn.classList.add("bg-neutral-900/60");
+      selectedTag = btn.dataset.filter || "all";
+      renderModules();
+    });
+  });
+
+  document.querySelectorAll(".exp-filter").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      selectedExp = btn.dataset.exp || "all";
+      document.getElementById("modules-grid")?.scrollIntoView({behavior:"smooth"});
+      renderModules();
+    });
+  });
+
+  // --- Initial paint ---
+  document.addEventListener("DOMContentLoaded", renderModules);
+})();
+</script>
+
+
+
 </body>
 </html>
 
