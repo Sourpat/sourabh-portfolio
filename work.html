@@ -126,65 +126,77 @@
 <!-- Data-driven modules -->
 <script>
   window.MODULES = [
-    { icon:"🦷", title:"Teeth Ordering (Gen Y – Phase 2)", tags:["commerce","compliance"], experiences:["HS_PO","HS_BA"], bullets:[
-      "Matrix ordering for Shade × Mold × Upper/Lower; parent/child cart lines.",
-      "Catalog-gated access; market toggle; no guest visibility.",
-      "Checkout preference for OOS handling (Substitute / Backorder / Cancel)."
+    { icon:"🦷", title:"Teeth Ordering", tags:["commerce","compliance"], experiences:["HS_PO","HS_BA"], bullets:[
+      "Introduced structured ordering logic for product variations (Shade × Mold × Upper/Lower).",
+      "Implemented market-level catalog access and visibility controls.",
+      "Defined handling rules for out-of-stock items (Substitute / Backorder / Cancel).",
+      "Key Outcome: Improved ordering accuracy and reduced manual exception handling."
     ]},
     { icon:"🛒", title:"Shopping Lists & Favorites", tags:["commerce","platform"], experiences:["HS_BA"], bullets:[
-      "Tabbed Lists & Favorites with search, filters, and pagination.",
-      "Granular sharing (users/locations/org) with view/edit controls.",
-      "Excel upload/download; quick add by item code; actions respect rights."
+      "Enabled searchable, filterable lists with pagination and bulk Excel import/export.",
+      "Designed granular sharing for users, locations, and org levels with role-based access.",
+      "Supported quick add/remove actions aligned with permission controls.",
+      "Key Outcome: Simplified reordering experience and improved collaboration."
     ]},
     { icon:"🔐", title:"Login & Access Control", tags:["platform","compliance"], experiences:["HS_BA"], bullets:[
-      "2FA (Email/SMS/Call), device trust (30 days), recovery flows.",
-      "Edit credential gates, lockouts, inactivity timeouts with resume.",
-      "TSM SSO via ADFS; site/locale routing and resilient error UX."
+     "Defined multi-factor authentication (Email/SMS/Call) and device-trust logic.",
+      "Set rules for credential edits, lockouts, and inactivity recovery.",
+      "Integrated ADFS-based SSO for TSM users and unified locale-based routing.",
+      "Key Outcome: Strengthened account security and improved login consistency across markets."
     ]},
     { icon:"🏷️", title:"Custom Partner Storefront", tags:["platform","commerce"], experiences:["HS_PO"], bullets:[
-      "Partner-branded pages via CMS (hero/nav/cards/forms/ad zones).",
-      "GenX component reuse; FE/Sitecore-first; localized & responsive.",
-      "Rebuy mini-cards (pricing on login) and sticky in-page nav."
+     "Delivered CMS-driven, partner-branded pages with modular hero, card, and nav components.",
+      "Reused existing GenX components to reduce dev effort and ensure responsive design.",
+      "Added mini-cards for quick reordering and persistent in-page navigation.",
+      "Key Outcome: Enabled flexible white-label storefront creation for B2B partners."
     ]},
     { icon:"🔁", title:"Order Management", tags:["commerce","platform"], experiences:["HS_PO"], bullets:[
-      "Future & Recurring: create, modify, skip, ship-now, cancel-all.",
-      "“Future & Recurring” tab; filters, search, Excel export.",
-      "MuleSoft-led APIs with retries, correlation IDs, payload logging."
+     "Supported recurring and future-dated order creation, modification, and cancellation.",
+      "Added filters, search, and Excel export for quick visibility and tracking.",
+      "Standardized API-led integrations with logging and retry handling.",
+      "Key Outcome: Streamlined repeat-order management and operational reliability."
     ]},
     { icon:"📑", title:"Invoice Reconciliations (3-Way Match)", tags:["payments","compliance"], experiences:["HS_PO"], bullets:[
-      "Receiving → Invoice Verification → Export/Payment workflow.",
-      "Role-gated dashboards, discrepancy handling, e-Receipts, audit trail.",
-      "CSV export profiles, scheduling, and email delivery."
+      "Built end-to-end flow from Receiving → Verification → Payment export.",
+      "Introduced dashboards for discrepancies, e-Receipts, and audit trail visibility.",
+      "Automated CSV exports and scheduled email delivery.",
+      "Key Outcome: Reduced reconciliation delays and improved financial accuracy."
     ]},
     { icon:"📊", title:"Account Dashboard", tags:["platform","commerce"], experiences:["HS_BA"], bullets:[
-      "Widget hub: Orders, Payments, Licensing, Recommendations, Support.",
-      "Barcode-scanner CTA; quick reorder; role-aware visibility.",
-      "Lazy data loads; analytics hooks; bottom ribbon shortcuts."
+      "Designed widget-based view combining Orders, Payments, Licensing, and Support.",
+      "Added barcode scanner shortcuts and quick reorder CTAs.",
+      "Optimized data loads and analytics hooks for faster rendering.",
+      "Key Outcome: Unified customer view for account-level insights."
     ]},
     { icon:"👤", title:"Profile Management", tags:["platform","compliance"], experiences:["HS_BA"], bullets:[
-      "My Settings: Profile, Checkout, Preferences with 2FA/recovery.",
-      "Edit gates + lockouts; audit timestamps; role/workflow visibility.",
-      "Express checkout, comms preferences, multi-market localization."
+      "Consolidated user settings (Profile, Checkout, Preferences) under My Account.",
+      "Added 2FA/recovery options and audit-based timestamps.",
+      "Supported localized views and compliance-based visibility rules.",
+      "Key Outcome: Simplified self-service while maintaining governance controls."
     ]},
     { icon:"💳", title:"Statements & Payments (AutoPay + Errors)", tags:["payments","platform"], experiences:["HS_PO"], bullets:[
-      "AutoPay enrollment; filter unenrolled accounts; saved method checks.",
-      "30+ error codes normalized to user-friendly categories.",
-      "Make a Payment: full/partial; saved-method validation; clear failures."
+     "Enabled AutoPay enrollment and saved-method validation.",
+      "Grouped 30+ backend error codes into user-friendly categories.",
+      "Enhanced Make a Payment flow with clear success/failure states.",
+      "Key Outcome: Increased payment success rate and improved support triage."
     ]},
     { icon:"🪪", title:"License Management (DEA / TDDD / E222)", tags:["compliance","commerce"], experiences:["HS_PO","HS_BA"], bullets:[
-      "Attestation prompts; expiry reminders; checkout gating.",
-      "JDE-backed verification; manual overrides reflected in UX.",
-      "Clear inline error states; auditability across locales."
+     "Automated license validation and expiry reminders during checkout.",
+      "Synced approvals with backend verification (JDE) for auditability.",
+      "Unified error messaging and locale-based exceptions.",
+      "Key Outcome: Strengthened compliance and reduced manual validation effort."
     ]},
     { icon:"💸", title:"Budget Controls & Approvals", tags:["payments","compliance"], experiences:["HS_PO"], bullets:[
-      "CC-only vs BOA behaviors; policy enable/disable with tooltips.",
-      "Multi-tier thresholds, routing, pending-order changes.",
-      "Approval UX aligned with budget checks at the right step."
+     "Defined budget rules for payment types (Credit Card vs Bill to Account).",
+      "Configured multi-tier approval thresholds and routing logic.",
+      "Integrated budget checks within checkout and approval flows.",
+      "Key Outcome: Improved financial discipline and transparent spending oversight."
     ]},
     { icon:"📈", title:"Reporting (Create / Modify / Notify)", tags:["platform"], experiences:["HS_PO"], bullets:[
-      "Modify with pre-filled steps; partial edits allowed.",
-      "Date-range only where applicable (eCatalog exception).",
-      "Plan to surface generation failures on web, not just email."
+     "Supported report modification with pre-filled fields and partial updates.",
+      "Applied date-range logic where applicable (eCatalog exception).",
+      "Proposed real-time failure notifications on web interface.",
+      "Key Outcome: Reduced rework and enabled on-demand reporting visibility."
     ]}
   ];
 </script>
