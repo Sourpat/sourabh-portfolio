@@ -7,7 +7,40 @@
   <meta name="description" content="E-commerce style portfolio for a PO/BA specializing in regulated commerce, payments, licensing, approvals, and reporting." />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23111827%22/><text x=%2220%22 y=%2258%22 font-size=%2250%22 fill=%22%23D946EF%22>SP</text></svg>">
-  <style> ::selection{background:rgba(217,70,239,.35);color:#0a0a0a} </style>
+    <style>
+    ::selection { background: rgba(217,70,239,.35); color: #0a0a0a; }
+
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.92), rgba(10, 10, 10, 0.9));
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .feature-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(120% 140% at 0% 0%, rgba(217, 70, 239, 0.12), transparent 45%),
+        radial-gradient(120% 140% at 100% 0%, rgba(59, 130, 246, 0.1), transparent 45%);
+      opacity: 0;
+      transition: opacity .2s ease;
+      z-index: 0;
+    }
+
+    .feature-card > * { position: relative; z-index: 1; }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 70, 239, 0.45);
+      box-shadow: 0 18px 40px -30px rgba(217, 70, 239, 0.8);
+    }
+
+    .feature-card:hover::before { opacity: 1; }
+  </style>
   
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -25,7 +58,7 @@
   }
   </script>
 </head>
-<body class="bg-neutral-950 text-neutral-100">
+<body class="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col">
   <!-- NAVBAR -->
  <header class="sticky top-0 z-50 backdrop-blur bg-neutral-950/70 border-b border-neutral-800">
   <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
@@ -40,6 +73,8 @@
   </nav>
 </header>
 
+  
+<main class="flex-1">
   <!-- HERO (Storefront feel) -->
  <section class="relative overflow-hidden">
   <div class="absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_0%,rgba(168,85,247,0.18),transparent_60%)]"></div>
@@ -51,28 +86,26 @@
     </p>
 
       <div class="mt-10 grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-      <a href="/sourabh-portfolio/work.html" class="card p-8 sm:p-10 hover:border-neutral-600 min-h-[220px] flex flex-col justify-between">
+      <a href="/sourabh-portfolio/work.html" class="feature-card p-8 sm:p-10 min-h-[220px] flex flex-col justify-between">
         <div class="text-2xl">🧱</div>
         <div class="mt-2 font-semibold">Work / Modules</div>
         <div class="text-base text-neutral-300 leading-relaxed">Interactive showcase of shipped modules with smart filters.</div>
       </a>
-      <a href="/sourabh-portfolio/experience.html" class="card p-8 sm:p-10 hover:border-neutral-600 min-h-[220px] flex flex-col justify-between">
+      <a href="/sourabh-portfolio/experience.html" class="feature-card p-8 sm:p-10 min-h-[220px] flex flex-col justify-between">
         <div class="text-2xl">🧠</div>
         <div class="mt-2 font-semibold">Experience</div>
         <div class="text-base text-neutral-300 leading-relaxed">PO/BA journey across Henry Schein & AXA XL deliveries.</div>
       </a>
-      <a href="/sourabh-portfolio/contact.html" class="card p-8 sm:p-10 hover:border-neutral-600 min-h-[220px] flex flex-col justify-between">
+      <a href="/sourabh-portfolio/contact.html" class="feature-card p-8 sm:p-10 min-h-[220px] flex flex-col justify-between">
         <div class="text-2xl">💬</div>
         <div class="mt-2 font-semibold">Contact</div>
         <div class="text-base text-neutral-300 leading-relaxed">Email, LinkedIn, and fast-response channels in one spot.</div>
       </a>
     </div>
 
-    <p class="mt-6 text-xs text-neutral-500">
-      US & India roles • H-1B transfer • Open to India relocation
-    </p>
   </div>
-</section>
+     </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="py-10 border-t border-neutral-800">
