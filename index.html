@@ -65,6 +65,7 @@
     <a href="/sourabh-portfolio/" class="font-semibold tracking-tight">Sourabh Patil</a>
     <ul class="hidden md:flex items-center gap-6 text-sm text-neutral-300">
       <li><a class="hover:text-white" href="/sourabh-portfolio/">Home</a></li>
+      <li><a class="hover:text-white" href="/sourabh-portfolio/projects.html">Projects</a></li>
       <li><a class="hover:text-white" href="/sourabh-portfolio/work.html">Work</a></li>
       <li><a class="hover:text-white" href="/sourabh-portfolio/experience.html">Experience</a></li>
       <li><a class="hover:text-white" href="/sourabh-portfolio/about.html">About</a></li>
@@ -105,6 +106,22 @@
 
   </div>
      </section>
+
+  <section id="featured-projects" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="text-xs uppercase tracking-[0.2em] text-fuchsia-300/80">Projects</p>
+        <h2 class="mt-2 text-3xl font-extrabold">Featured builds</h2>
+        <p class="mt-2 text-neutral-400">Focused, high-impact products that showcase AI, compliance, and workflow design.</p>
+      </div>
+      <a href="/sourabh-portfolio/projects.html" class="inline-flex items-center gap-2 rounded-full border border-neutral-700 px-4 py-2 text-sm hover:bg-neutral-900/60">
+        View all projects
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div id="featured-projects-grid" class="mt-8 grid gap-6 lg:grid-cols-2"></div>
+  </section>
   </main>
 
   <!-- FOOTER -->
@@ -119,6 +136,69 @@
   </footer>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <script src="/sourabh-portfolio/projects-data.js"></script>
+  <script>
+    const featuredGrid = document.getElementById("featured-projects-grid");
+    const featuredProjects = (window.PROJECTS || []).filter(project => project.featured);
+
+    if (featuredGrid) {
+      featuredGrid.innerHTML = featuredProjects
+        .map(project => {
+          const stacks = (project.stack || [])
+            .map(item => `<span class="chip">${item}</span>`)
+            .join("");
+          const bullets = (project.bullets || [])
+            .slice(0, 3)
+            .map(item => `<li>${item}</li>`)
+            .join("");
+          const links = (project.links || [])
+            .map(link => {
+              const isExternal = link.href.startsWith("http");
+              return `<a class="text-blue-300 hover:text-blue-200 font-semibold" href="${link.href}" ${isExternal ? 'target="_blank" rel="noreferrer"' : ""}>${link.label}</a>`;
+            })
+            .join("");
+
+          return `
+            <article class="project-card p-6 sm:p-7">
+              <header class="space-y-2">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 class="text-xl font-semibold text-white">${project.title}</h3>
+                    ${project.subtitle ? `<p class="text-sm text-neutral-300">${project.subtitle}</p>` : ""}
+                    <p class="text-sm text-neutral-400">${project.role}</p>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-2">${stacks}</div>
+              </header>
+              <p class="mt-4 text-sm text-neutral-300 leading-relaxed">${project.summary}</p>
+              ${bullets ? `<ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-neutral-300">${bullets}</ul>` : ""}
+              <div class="mt-4 flex flex-wrap gap-4 text-sm">${links}</div>
+            </article>
+          `;
+        })
+        .join("");
+    }
+  </script>
+
+  <style>
+    .project-card {
+      border-radius: 1.25rem;
+      border: 1px solid rgba(120, 120, 120, 0.2);
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.88), rgba(10, 10, 10, 0.9));
+      box-shadow: 0 18px 40px -30px rgba(217, 70, 239, 0.6);
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: #e2e8f0;
+      background: rgba(15, 23, 42, 0.6);
+    }
+  </style>
 
 <script>
   // Light/Dark toggle (optional minimal)
@@ -236,4 +316,3 @@ document.getElementById('axaMoreBtn')?.addEventListener('click', ()=>{
 
 </body>
 </html>
-

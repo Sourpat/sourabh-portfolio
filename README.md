@@ -4,6 +4,7 @@ A fast, shareable portfolio site you can edit directly and deploy on GitHub Page
 
 ## Files
 - `index.html` — single‑file site using Tailwind CDN.
+- `projects.html` — dedicated Projects page featuring AutoComply AI and additional builds.
 - `content.json` — structured data to keep bullets and text in one place (for future automation).
 - `assets/` — put your `Sourabh_Patil_Resume.pdf`, `favicon.png`, images here.
 
@@ -23,6 +24,7 @@ Drag‑and‑drop the folder on https://app.netlify.com/drop
 - Update `content.json` (bullets, case studies, skills) then optionally wire a small script to load it into the DOM if you prefer pure data‑driven content.
 - Replace `assets/Sourabh_Patil_Resume.pdf` and `assets/favicon.png`.
 - Change colors by editing Tailwind classes in `index.html`.
+- Highlight featured work on the Projects page and keep the Home page focused on the top two projects.
 
 ## Roadmap / TODO for Codex
 - [ ] Add a light theme toggle.
@@ -31,4 +33,3 @@ Drag‑and‑drop the folder on https://app.netlify.com/drop
 - [ ] Add simple contact form (Netlify forms) with spam honeypot.
 - [ ] Create `deploy.yml` GitHub Action to auto‑publish on push.
 - [ ] Add `sitemap.xml` & `robots.txt` for SEO.
-
