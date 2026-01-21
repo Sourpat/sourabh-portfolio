@@ -26,8 +26,9 @@
   </header>
 
   <main class="flex-1">
-    <section class="relative overflow-hidden">
+    <section class="projects-hero relative overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_0%,rgba(168,85,247,0.15),transparent_60%)]"></div>
+      <div class="projects-hero-glow" aria-hidden="true"></div>
       <div class="relative mx-auto projects-shell py-16 text-center">
         <p class="text-xs uppercase tracking-[0.2em] text-fuchsia-300/80">Projects</p>
         <h1 class="mt-3 text-4xl font-extrabold">Product and AI builds</h1>
@@ -72,8 +73,12 @@
               return `<a class="project-link" href="${link.href}" ${isExternal ? 'target="_blank" rel="noreferrer"' : ""}>${link.label}</a>`;
             })
             .join("");
-          const media = isFeatured && project.thumbnail
-            ? `<div class="project-media"><img src="${project.thumbnail}" alt="${project.title} thumbnail" loading="lazy"></div>`
+          const autoComplyThumbnail = "/sourabh-portfolio/assets/img/projects/autocomply-thumb.png";
+          const resolvedThumbnail = project.id === "autocomply-ai"
+            ? autoComplyThumbnail
+            : project.thumbnail;
+          const media = isFeatured && resolvedThumbnail
+            ? `<div class="project-media"><img src="${resolvedThumbnail}" alt="${project.title} thumbnail" loading="lazy"></div>`
             : "";
           const role = isFeatured && project.role ? `<p class="text-sm text-neutral-300">${project.role}</p>` : "";
           const subtitle = isFeatured && project.subtitle ? `<p class="text-sm text-neutral-200">${project.subtitle}</p>` : "";
